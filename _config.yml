@@ -1,0 +1,12 @@
+﻿title: Jacob Rampino
+description: >-
+  Computational Social Science, University of Chicago. NLP methods for
+  political communication.
+url: ""
+baseurl: ""
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - README.md
