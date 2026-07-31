@@ -1,0 +1,15 @@
+- label: Home
+  url: /
+  key: home
+- label: CV
+  url: /cv/
+  key: cv
+- label: Research
+  url: /research/
+  key: research
+- label: Press
+  url: /journalism/
+  key: journalism
+- label: Contact
+  url: /contact/
+  key: contact

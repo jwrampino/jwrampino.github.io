@@ -1,0 +1,9 @@
+<nav class="nav nav-tabs" aria-label="Primary">
+  {% for item in site.data.nav %}
+    {% assign is_active = false %}
+    {% if page.navkey == item.key %}{% assign is_active = true %}{% endif %}
+    <a href="{{ item.url | relative_url }}"
+       class="tab tab-{{ item.key }}{% if is_active %} is-active{% endif %}"
+       {% if is_active %}aria-current="page"{% endif %}>{{ item.label }}</a>
+  {% endfor %}
+</nav>

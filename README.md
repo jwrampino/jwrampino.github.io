@@ -26,11 +26,5 @@ add matching entry to `_data/nav.yml`.
 
 ## deploy
 
-push to main. settings > pages > source: main, root.
-live at jwrampino.github.io in a minute or two.
-
-## custom domain
-
-add CNAME file at root containing jwrampino.com.
-point dns a records at 185.199.108.153 / .109.153 / .110.153 / .111.153.
-enable https in settings > pages once dns propagates.
+push to main. settings > pages > source: main, root.  
+live at jwrampino.github.io in a minute or two.  

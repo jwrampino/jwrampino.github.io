@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Jacob Rampino</title>
+<meta name="description" content="Computational Social Science, University of Chicago. NLP methods for viewpoint change, political text analysis, and whatever else ends up here.">
+
+<!-- avoid flash of wrong theme -->
+<script>
+  (function () {
+    var saved = localStorage.getItem("jr-theme");
+    var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-header">
+  <a href="/" class="wordmark">JR</a>
+
+  <nav class="nav nav-tabs" aria-label="Primary">
+  
+    
+    
+    <a href="/"
+       class="tab tab-home is-active"
+       aria-current="page">Home</a>
+  
+    
+    
+    <a href="/cv/"
+       class="tab tab-cv"
+       >CV</a>
+  
+    
+    
+    <a href="/research/"
+       class="tab tab-research"
+       >Research</a>
+  
+    
+    
+    <a href="/journalism/"
+       class="tab tab-journalism"
+       >Press</a>
+  
+    
+    
+    <a href="/contact/"
+       class="tab tab-contact"
+       >Contact</a>
+  
+</nav>
+
+  <nav class="nav nav-dir" aria-label="Primary">
+  <p class="dir-prompt">~/jrampino $ ls</p>
+  <ul class="dir-list">
+  
+    
+    
+    <li>
+      <a href="/"
+         class="dir-entry is-active"
+         aria-current="page">
+        <span class="dir-index">01</span><span class="dir-name">home</span><span class="dir-ext">.md</span><span class="dir-cursor"> ←</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a href="/cv/"
+         class="dir-entry"
+         >
+        <span class="dir-index">02</span><span class="dir-name">cv</span><span class="dir-ext">.md</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a href="/research/"
+         class="dir-entry"
+         >
+        <span class="dir-index">03</span><span class="dir-name">research</span><span class="dir-ext">.md</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a href="/journalism/"
+         class="dir-entry"
+         >
+        <span class="dir-index">04</span><span class="dir-name">journalism</span><span class="dir-ext">.md</span>
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a href="/contact/"
+         class="dir-entry"
+         >
+        <span class="dir-index">05</span><span class="dir-name">contact</span><span class="dir-ext">.md</span>
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+
+
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch between light and dark mode">
+    <span class="toggle-track">
+      <svg class="toggle-glyph glyph-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+      </svg>
+      <svg class="toggle-glyph glyph-term" viewBox="0 0 24 24" fill="none">
+        <path d="M5 7L11 12L5 17" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="13" y1="18" x2="19" y2="18" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+      </svg>
+      <span class="toggle-thumb"></span>
+    </span>
+  </button>
+</header>
+
+<main>
+  <section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">[SUBJECT]</p>
+    <h1 class="hero-name">
+      Jacob <span class="mark">Rampino</span>
+    </h1>
+    <p class="hero-role">MA candidate, Computational Social Science, University of Chicago</p>
+    <p class="hero-desc">
+      I study political communication, using natural language processing to
+      understand contentious discourse online. I'm interested in how framing effects and algorithmic bias narrow the range of discussion. My background is in political science, history, and journalism.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">NLP</span>
+      <span class="tag">political communication</span>
+      <span class="tag">censorship</span>
+      <span class="tag">memetics</span>
+      <span class="tag">contested concepts</span>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img class="hero-photo-light" src="/assets/img/valley_portrait.JPG" alt="" />
+    <img class="hero-photo-dark" src="/assets/img/lake.JPG" alt="" />
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <p>jacob rampino</p>
+</footer>
+
+<script src="/assets/js/theme.js"></script>
+</body>
+</html>
