@@ -45,13 +45,24 @@
   </button>
 </header>
 
-<main>
-  {{ content }}
-</main>
+<div class="page-shell">
+  <div class="page-content">
+    <main id="site-main">
+      {{ content }}
+    </main>
 
-<footer class="site-footer">
-  <p>jacob rampino. hosted by github.</p>
-</footer>
+    <footer class="site-footer">
+      <p>jacob rampino. hosted by github.</p>
+    </footer>
+  </div>
+
+  {% if page.photo_light %}
+  <aside class="page-photo">
+    <img class="hero-photo-light" src="{{ page.photo_light | relative_url }}" alt="">
+    {% if page.photo_dark %}<img class="hero-photo-dark" src="{{ page.photo_dark | relative_url }}" alt="">{% endif %}
+  </aside>
+  {% endif %}
+</div>
 
 <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
 </body>

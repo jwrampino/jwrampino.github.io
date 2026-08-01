@@ -1,11 +1,11 @@
 ﻿---
 layout: default
-title: Press
+title: Journalism
 navkey: journalism
 ---
 
 <section class="hero">
   <p class="hero-eyebrow">[UNDER CONSTRUCTION]</p>
-  <h1 class="hero-name">Press</h1>
+  <h1 class="hero-name">Journalism</h1>
   <p class="hero-desc">This page is next up — check back soon.</p>
 </section>

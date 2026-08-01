@@ -1,6 +1,6 @@
 ﻿---
 layout: default
-title: Press
+title: Journalism
 navkey: journalism
 ---
 

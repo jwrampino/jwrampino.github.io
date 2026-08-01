@@ -2,6 +2,8 @@
 layout: default
 title: Home
 navkey: home
+photo_light: /assets/img/valley_portrait.JPG
+photo_dark: /assets/img/lake.JPG
 ---
 
 <section class="hero">
@@ -22,9 +24,5 @@ navkey: home
       <span class="tag">memetics</span>
       <span class="tag">contested concepts</span>
     </div>
-  </div>
-  <div class="hero-photo">
-    <img class="hero-photo-light" src="{{ '/assets/img/valley_portrait.JPG' | relative_url }}" alt="">
-    <img class="hero-photo-dark" src="{{ '/assets/img/lake.JPG' | relative_url }}" alt="">
   </div>
 </section>
