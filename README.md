@@ -28,3 +28,8 @@ add matching entry to `_data/nav.yml`.
 
 push to main. settings > pages > source: main, root.  
 live at jwrampino.github.io in a minute or two.  
+
+## credits
+
+some icons: lucide.dev (ISC license)
+analytics: goatcounter.com
