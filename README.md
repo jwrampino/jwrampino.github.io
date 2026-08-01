@@ -31,5 +31,5 @@ live at jwrampino.github.io in a minute or two.
 
 ## credits
 
-some icons: lucide.dev (ISC license)
+some icons: lucide.dev (ISC license)  
 analytics: goatcounter.com
