@@ -1,5 +1,4 @@
-// Theme toggle — persists choice, respects prefers-color-scheme on first visit.
-// No frameworks, no build step.
+// theme toggle, persists via localstorage, respects prefers-color-scheme on first load
 
 (function () {
   var root = document.documentElement;
@@ -14,14 +13,38 @@
   });
 })();
 
-// Highlight current nav entry (belt-and-suspenders alongside the
-// server-rendered aria-current, in case a page's front matter is missing).
+// backup active-nav check in case front matter is missing navkey
 (function () {
   var path = window.location.pathname.replace(/\/index\.html$/, "/");
   document.querySelectorAll(".nav a").forEach(function (link) {
     if (link.getAttribute("href") === path) {
       link.classList.add("is-active");
       link.setAttribute("aria-current", "page");
+    }
+  });
+})();
+
+// dark mode nav: ls / clear toggle, opens inline on desktop, dropdown on mobile
+(function () {
+  var toggle = document.getElementById("dir-toggle");
+  var listing = document.getElementById("dir-listing");
+  if (!toggle || !listing) return;
+  var label = toggle.querySelector(".dir-toggle-label");
+
+  function setOpen(open) {
+    toggle.setAttribute("aria-expanded", String(open));
+    listing.hidden = !open;
+    if (label) label.textContent = open ? "clear" : "ls";
+  }
+
+  toggle.addEventListener("click", function () {
+    setOpen(toggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  // close if clicking outside, mobile dropdown case
+  document.addEventListener("click", function (e) {
+    if (!toggle.contains(e.target) && !listing.contains(e.target)) {
+      setOpen(false);
     }
   });
 })();
