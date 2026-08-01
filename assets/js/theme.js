@@ -25,16 +25,21 @@
 })();
 
 // dark mode nav: ls / clear toggle, opens inline on desktop, dropdown on mobile
+// state persists per-tab via sessionStorage so it survives page navigation
 (function () {
   var toggle = document.getElementById("dir-toggle");
   var listing = document.getElementById("dir-listing");
   if (!toggle || !listing) return;
   var label = toggle.querySelector(".dir-toggle-label");
+  var STORAGE_KEY = "jr-dir-open";
 
-  function setOpen(open) {
+  function setOpen(open, persist) {
     toggle.setAttribute("aria-expanded", String(open));
     listing.hidden = !open;
     if (label) label.textContent = open ? "clear" : "ls";
+    if (persist !== false) {
+      sessionStorage.setItem(STORAGE_KEY, open ? "1" : "0");
+    }
   }
 
   toggle.addEventListener("click", function () {
@@ -47,4 +52,9 @@
       setOpen(false);
     }
   });
+
+  // restore state from the current session
+  if (sessionStorage.getItem(STORAGE_KEY) === "1") {
+    setOpen(true, false);
+  }
 })();
