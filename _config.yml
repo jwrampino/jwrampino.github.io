@@ -2,11 +2,13 @@
 description: >-
   Computational Social Science, University of Chicago. NLP methods for
   political communication.
-url: ""
+url: "https://jwrampino.github.io"
 baseurl: ""
 
 markdown: kramdown
 permalink: pretty
+plugins:
+  - jekyll-sitemap
 
 exclude:
   - README.md

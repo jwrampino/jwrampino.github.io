@@ -1,0 +1,6 @@
+# hi! hello. yes, you can scrape this site.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://jwrampino.github.io/sitemap.xml
