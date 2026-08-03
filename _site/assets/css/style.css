@@ -109,6 +109,9 @@ html[data-theme="dark"] .nav-compass { display: none; }
   transform-origin: 12px 12px;
   transform: rotate(var(--bearing));
   transition: transform 0.3s ease;
+}
+
+.compass-needle.jiggle {
   animation: needle-settle 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
@@ -116,11 +119,6 @@ html[data-theme="dark"] .nav-compass { display: none; }
   0% { transform: rotate(calc(var(--bearing) - 30deg)); }
   60% { transform: rotate(calc(var(--bearing) + 10deg)); }
   100% { transform: rotate(var(--bearing)); }
-}
-
-.nav-compass.is-open .compass-needle {
-  transform: rotate(0deg);
-  animation: none;
 }
 
 .compass-listing[hidden] { display: none; }
