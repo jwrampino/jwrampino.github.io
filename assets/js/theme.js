@@ -60,15 +60,17 @@ function jrPrimeEntries(entries, branches) {
 // its collapsed height via CSS transition), types the tree branch, then
 // the entry text, so the dropdown box grows as the tree writes itself out.
 function jrTypeEntriesCascade(entries, branches, speed, stagger, isMobile) {
+  var entrySpeed = isMobile ? Math.round(speed * 1.1) : speed;
+  var branchSpeed = 22; // +10% for mobile (branches only ever render on mobile)
   var promises = [];
   entries.forEach(function (entry, i) {
     var branch = branches ? branches[i] : null;
     promises.push(jrSleep(i * stagger).then(async function () {
       if (isMobile && branch) {
         branch.closest("li").classList.add("is-visible");
-        await jrTypeText(branch, branch.dataset.full, 20);
+        await jrTypeText(branch, branch.dataset.full, branchSpeed);
       }
-      return jrTypeEntry(entry, speed);
+      return jrTypeEntry(entry, entrySpeed);
     }));
   });
   return Promise.all(promises);
@@ -106,8 +108,9 @@ function jrTypeEntriesCascade(entries, branches, speed, stagger, isMobile) {
       }
     } else if (open) {
       listing.hidden = false;
-      if (label) await jrTypeText(label, "clear", 110);
-      await jrTypeEntriesCascade(entries, branches, 18, 70, !isDesktop);
+      var labelPromise = label ? jrTypeText(label, "clear", 110) : Promise.resolve();
+      var entriesPromise = jrTypeEntriesCascade(entries, branches, 18, 70, !isDesktop);
+      await Promise.all([labelPromise, entriesPromise]);
     } else {
       if (label) await jrTypeText(label, "ls", 110);
       listing.hidden = true;
