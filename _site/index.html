@@ -30,40 +30,96 @@
 
 <header class="site-header">
 
-  <nav class="nav nav-tabs" aria-label="Primary">
+  <nav class="nav nav-compass" aria-label="Primary">
   
-    
-    
-    <a href="/"
-       class="tab tab-home is-active"
-       aria-current="page">Home</a>
   
-    
-    
-    <a href="/cv/"
-       class="tab tab-cv"
-       >CV</a>
-  
-    
-    
-    <a href="/research/"
-       class="tab tab-research"
-       >Research</a>
-  
-    
-    
-    <a href="/journalism/"
-       class="tab tab-journalism"
-       >Journalism</a>
-  
-    
-    
-    <a href="/contact/"
-       class="tab tab-contact"
-       >Contact</a>
-  
-</nav>
 
+  <button type="button" class="compass-toggle" id="compass-toggle" aria-expanded="false" aria-controls="compass-listing" aria-label="open site map">
+    <svg class="compass-needle-track" viewBox="0 0 24 24" width="22" height="22">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="var(--rule)" stroke-width="1.5" />
+      <g class="compass-needle" id="compass-needle" style="--bearing: 0deg;">
+        <path d="M12,5 L14,12 L12,19 L10,12 Z" fill="var(--accent)" />
+      </g>
+      <circle cx="12" cy="12" r="1.4" fill="var(--ink)" />
+    </svg>
+  </button>
+
+  <div class="compass-listing" id="compass-listing" hidden>
+    <ul class="pin-list">
+      
+        
+        
+        <li>
+          <a href="/"
+             class="pin-entry is-active"
+             aria-current="page">
+            <svg class="pin-icon" viewBox="0 0 24 24" width="13" height="13" fill="var(--accent)" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+              <circle cx="12" cy="10" r="3" fill="var(--paper)" />
+            </svg>
+            <span class="pin-label">home</span>
+          </a>
+        </li>
+      
+        
+        
+        <li>
+          <a href="/cv/"
+             class="pin-entry"
+             >
+            <svg class="pin-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="var(--ink-faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+              <circle cx="12" cy="10" r="3" fill="none" />
+            </svg>
+            <span class="pin-label">cv</span>
+          </a>
+        </li>
+      
+        
+        
+        <li>
+          <a href="/research/"
+             class="pin-entry"
+             >
+            <svg class="pin-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="var(--ink-faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+              <circle cx="12" cy="10" r="3" fill="none" />
+            </svg>
+            <span class="pin-label">research</span>
+          </a>
+        </li>
+      
+        
+        
+        <li>
+          <a href="/journalism/"
+             class="pin-entry"
+             >
+            <svg class="pin-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="var(--ink-faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+              <circle cx="12" cy="10" r="3" fill="none" />
+            </svg>
+            <span class="pin-label">journalism</span>
+          </a>
+        </li>
+      
+        
+        
+        <li>
+          <a href="/contact/"
+             class="pin-entry"
+             >
+            <svg class="pin-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="var(--ink-faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+              <circle cx="12" cy="10" r="3" fill="none" />
+            </svg>
+            <span class="pin-label">contact</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
   <nav class="nav nav-dir" aria-label="Primary">
   <button type="button" class="dir-toggle" id="dir-toggle" aria-expanded="false" aria-controls="dir-listing">
     <span class="dir-prompt">~/jrampino $ <span class="dir-toggle-label">ls</span></span>

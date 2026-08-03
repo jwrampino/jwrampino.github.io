@@ -25,7 +25,8 @@
 })();
 
 // dark mode nav: ls / clear toggle, opens inline on desktop, dropdown on mobile
-// state persists per-tab via sessionStorage on desktop only.
+// state persists per-tab via sessionStorage on desktop only, matching the
+// 640px CSS breakpoint. mobile always starts collapsed.
 (function () {
   var toggle = document.getElementById("dir-toggle");
   var listing = document.getElementById("dir-listing");
@@ -55,6 +56,41 @@
   });
 
   // restore state from the current session, desktop only
+  if (isDesktop && sessionStorage.getItem(STORAGE_KEY) === "1") {
+    setOpen(true, false);
+  }
+})();
+
+// light mode nav: compass / pin toggle, same behavior as the dark mode
+// needle points to current page's bearing when closed, centers to neutral when open.
+(function () {
+  var toggle = document.getElementById("compass-toggle");
+  var listing = document.getElementById("compass-listing");
+  var nav = document.querySelector(".nav-compass");
+  if (!toggle || !listing || !nav) return;
+  var STORAGE_KEY = "jr-compass-open";
+  var isDesktop = window.matchMedia("(min-width: 641px)").matches;
+
+  function setOpen(open, persist) {
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "close site map" : "open site map");
+    listing.hidden = !open;
+    nav.classList.toggle("is-open", open);
+    if (persist !== false && isDesktop) {
+      sessionStorage.setItem(STORAGE_KEY, open ? "1" : "0");
+    }
+  }
+
+  toggle.addEventListener("click", function () {
+    setOpen(toggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!toggle.contains(e.target) && !listing.contains(e.target)) {
+      setOpen(false);
+    }
+  });
+
   if (isDesktop && sessionStorage.getItem(STORAGE_KEY) === "1") {
     setOpen(true, false);
   }

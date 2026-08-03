@@ -1,15 +1,20 @@
 - label: Home
   url: /
   key: home
+  bearing: 0
 - label: CV
   url: /cv/
   key: cv
+  bearing: 72
 - label: Research
   url: /research/
   key: research
+  bearing: 144
 - label: Journalism
   url: /journalism/
   key: journalism
+  bearing: 216
 - label: Contact
   url: /contact/
   key: contact
+  bearing: 288

@@ -1,9 +1,36 @@
-<nav class="nav nav-tabs" aria-label="Primary">
+<nav class="nav nav-compass" aria-label="Primary">
+  {% assign current_bearing = 0 %}
   {% for item in site.data.nav %}
-    {% assign is_active = false %}
-    {% if page.navkey == item.key %}{% assign is_active = true %}{% endif %}
-    <a href="{{ item.url | relative_url }}"
-       class="tab tab-{{ item.key }}{% if is_active %} is-active{% endif %}"
-       {% if is_active %}aria-current="page"{% endif %}>{{ item.label }}</a>
+    {% if page.navkey == item.key %}{% assign current_bearing = item.bearing %}{% endif %}
   {% endfor %}
+
+  <button type="button" class="compass-toggle" id="compass-toggle" aria-expanded="false" aria-controls="compass-listing" aria-label="open site map">
+    <svg class="compass-needle-track" viewBox="0 0 24 24" width="22" height="22">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="var(--rule)" stroke-width="1.5" />
+      <g class="compass-needle" id="compass-needle" style="--bearing: {{ current_bearing }}deg;">
+        <path d="M12,5 L14,12 L12,19 L10,12 Z" fill="var(--accent)" />
+      </g>
+      <circle cx="12" cy="12" r="1.4" fill="var(--ink)" />
+    </svg>
+  </button>
+
+  <div class="compass-listing" id="compass-listing" hidden>
+    <ul class="pin-list">
+      {% for item in site.data.nav %}
+        {% assign is_active = false %}
+        {% if page.navkey == item.key %}{% assign is_active = true %}{% endif %}
+        <li>
+          <a href="{{ item.url | relative_url }}"
+             class="pin-entry{% if is_active %} is-active{% endif %}"
+             {% if is_active %}aria-current="page"{% endif %}>
+            <svg class="pin-icon" viewBox="0 0 24 24" width="13" height="13" fill="{% if is_active %}var(--accent){% else %}none{% endif %}" stroke="{% if is_active %}var(--accent){% else %}var(--ink-faint){% endif %}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+              <circle cx="12" cy="10" r="3" fill="{% if is_active %}var(--paper){% else %}none{% endif %}" />
+            </svg>
+            <span class="pin-label">{{ item.label | downcase }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </nav>
