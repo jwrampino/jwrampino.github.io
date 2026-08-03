@@ -61,15 +61,21 @@
   }
 })();
 
-// light mode nav: compass / pin toggle, same behavior as the dark mode
-// needle points to current page's bearing when closed, centers to neutral when open.
+// light mode nav: compass / pin toggle
 (function () {
   var toggle = document.getElementById("compass-toggle");
   var listing = document.getElementById("compass-listing");
   var nav = document.querySelector(".nav-compass");
-  if (!toggle || !listing || !nav) return;
+  var needle = document.getElementById("compass-needle");
+  if (!toggle || !listing || !nav || !needle) return;
   var STORAGE_KEY = "jr-compass-open";
   var isDesktop = window.matchMedia("(min-width: 641px)").matches;
+
+  function jiggle() {
+    needle.classList.remove("jiggle");
+    void needle.offsetWidth; // force reflow so the animation can restart
+    needle.classList.add("jiggle");
+  }
 
   function setOpen(open, persist) {
     toggle.setAttribute("aria-expanded", String(open));
@@ -83,6 +89,7 @@
 
   toggle.addEventListener("click", function () {
     setOpen(toggle.getAttribute("aria-expanded") !== "true");
+    jiggle();
   });
 
   document.addEventListener("click", function (e) {
@@ -94,4 +101,6 @@
   if (isDesktop && sessionStorage.getItem(STORAGE_KEY) === "1") {
     setOpen(true, false);
   }
+
+  jiggle(); // settle flourish on page load, always lands on this page's bearing
 })();
