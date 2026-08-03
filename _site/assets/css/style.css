@@ -251,6 +251,8 @@ html[data-theme="dark"] .nav-dir {
 .dir-entry.is-active { color: var(--accent); }
 .dir-cursor { color: var(--accent); }
 
+.dir-branch { display: none; }
+
 /* mobile: listing becomes a dropdown, styled like a repo file tree */
 @media (max-width: 640px) {
   .dir-listing {
@@ -272,13 +274,20 @@ html[data-theme="dark"] .nav-dir {
     gap: 0.45rem;
   }
 
-  .dir-list li::before {
-    content: "├── ";
+  .dir-list li {
+    display: flex;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+  .dir-list li.is-visible { max-height: 26px; }
+
+  .dir-branch {
+    display: inline-block;
     color: var(--ink-faint);
     opacity: 0.6;
-  }
-  .dir-list li:last-child::before {
-    content: "└── ";
+    white-space: pre;
   }
 }
 

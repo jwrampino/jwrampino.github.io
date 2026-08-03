@@ -8,7 +8,7 @@
         {% assign is_active = false %}
         {% if page.navkey == item.key %}{% assign is_active = true %}{% endif %}
         <li>
-          <a href="{{ item.url | relative_url }}"
+          <span class="dir-branch" data-full="{% if forloop.last %}└── {% else %}├── {% endif %}"></span><a href="{{ item.url | relative_url }}"
              class="dir-entry{% if is_active %} is-active{% endif %}"
              {% if is_active %}aria-current="page"{% endif %}>
             <span class="dir-index">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span><span class="dir-name">{{ item.key }}</span><span class="dir-ext">.md</span>{% if is_active %}<span class="dir-cursor"> ←</span>{% endif %}
