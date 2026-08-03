@@ -128,7 +128,8 @@ function jrTypeEntriesCascade(entries, speed, stagger) {
 })();
 
 // light mode nav: compass / pin toggle, same behavior as the dark mode
-// needle points to current page's bearing when closed, centers to neutral when open.
+// listing, just a different visual language. needle points to current
+// page's bearing when closed, centers to neutral when open.
 (function () {
   var toggle = document.getElementById("compass-toggle");
   var listing = document.getElementById("compass-listing");
@@ -140,7 +141,7 @@ function jrTypeEntriesCascade(entries, speed, stagger) {
 
   function jiggle() {
     needle.classList.remove("jiggle");
-    void needle.offsetWidth; // force reflow so the animation can restart
+    needle.getBoundingClientRect(); // force reflow so the animation can restart (offsetWidth doesn't reliably work on SVG elements)
     needle.classList.add("jiggle");
   }
 
