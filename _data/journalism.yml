@@ -1,0 +1,44 @@
+clips:
+  - org: "FSView & Florida Flambeau"
+    entries:
+      - title: "placeholder headline"
+        date: "2024-01-01"
+        description: "one line, in my own words, about what the piece covers."
+        url: ""
+        image: ""
+  - org: "Political Review at FSU"
+    entries:
+      - title: "placeholder headline"
+        date: "2024-01-01"
+        description: "one line, in my own words, about what the piece covers."
+        url: ""
+        image: ""
+  - org: "FSU History Department"
+    entries:
+      - title: "placeholder headline"
+        date: "2024-01-01"
+        description: "one line, in my own words, about what the piece covers."
+        url: ""
+        image: ""
+
+photos:
+  org: "FSView & Florida Flambeau"
+  entries:
+    - title: "placeholder headline"
+      date: "2024-01-01"
+      credit: "written and photographed"
+      url: ""
+      image: ""
+    - title: "placeholder headline"
+      date: "2024-01-01"
+      credit: "photography only"
+      url: ""
+      image: ""
+
+press:
+  - title: "placeholder title"
+    outlet: "LibÃ©ration"
+    date: "2024-01-01"
+    description: "one line, in my own words, on how the piece surfaced."
+    url: ""
+    image: ""

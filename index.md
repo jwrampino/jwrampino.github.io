@@ -20,8 +20,10 @@ photo_dark: /assets/img/lake.JPG
     <div class="hero-tags">
       <span class="tag">NLP</span>
       <span class="tag">political communication</span>
+      <span class="tag">media studies</span>
       <span class="tag">censorship</span>
       <span class="tag">memetics</span>
+      <span class="tag">gatekeeping</span>
       <span class="tag">contested concepts</span>
     </div>
   </div>
