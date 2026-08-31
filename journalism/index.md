@@ -7,7 +7,7 @@ navkey: journalism
 <section class="hero">
   <p class="hero-eyebrow">[JOURNALISM]</p>
   <h1 class="hero-name">Journalism</h1>
-  <p class="hero-desc">My bylines, photography, and a few places my work has turned up elsewhere.</p>
+  <p class="hero-desc">Selected bylines and photographs.</p>
 </section>
 
 <section class="section">

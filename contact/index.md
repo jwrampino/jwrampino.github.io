@@ -6,7 +6,8 @@ navkey: contact
 
 <section class="hero">
   <p class="hero-eyebrow">[CONTACT]</p>
-  <h1 class="hero-name">Get in touch</h1>
+  <h1 class="hero-name">Contact</h1>
+  <p class="hero-desc">Get in touch.</p>
 </section>
 
 <section class="section">
