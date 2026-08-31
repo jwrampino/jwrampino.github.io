@@ -1,8 +1,8 @@
 documents:
   - title: "Resume"
     date: "2026"
-    url: ""
-    image: ""
+    url: "/assets/pdf/Jacob-Rampino-Resume.pdf"
+    image: "/assets/img/resume-thumb.jpg"
   - title: "CV"
     date: "2026"
     url: ""
