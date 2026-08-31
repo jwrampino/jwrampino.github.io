@@ -13,7 +13,7 @@ navkey: cv
 <section class="section">
   <div class="clip-grid">
     {% for doc in site.data.cv.documents %}
-    {% include clip-card.html entry=doc %}
+    {% include clip-card.html entry=doc glass=true %}
     {% endfor %}
   </div>
 </section>

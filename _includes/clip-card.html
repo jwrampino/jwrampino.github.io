@@ -1,7 +1,7 @@
 {% assign entry = include.entry %}
 {% assign meta = include.meta | default: entry.date %}
 <a class="clip-card" href="{{ entry.url | default: '#' }}"{% if entry.url and entry.url != "" %} target="_blank" rel="noopener"{% endif %}>
-  <div class="clip-thumb">
+  <div class="clip-thumb{% if include.glass %} clip-thumb--glass{% endif %}">
     {% if entry.image and entry.image != "" %}
     <img src="{{ entry.image | relative_url }}" alt="">
     {% endif %}
@@ -9,6 +9,8 @@
   <div class="clip-body">
     <p class="clip-title">{{ entry.title }}</p>
     <p class="clip-date">{{ meta }}</p>
+    {% if entry.description and entry.description != "" %}
     <p class="clip-desc">{{ entry.description }}</p>
+    {% endif %}
   </div>
 </a>
