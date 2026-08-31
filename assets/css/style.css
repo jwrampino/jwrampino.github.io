@@ -454,6 +454,9 @@ main { max-width: var(--max); margin: 0 auto; }
 }
 
 .section { padding: 3.2rem var(--edge); border-top: 1px solid var(--rule); }
+.page-shell:not(:has(.page-photo)) .section:first-of-type {
+  padding-top: 1.8rem;
+}
 
 .section-label {
   font-family: var(--mono);
