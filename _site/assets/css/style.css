@@ -368,6 +368,16 @@ html[data-theme="dark"] .toggle-thumb {
 html[data-theme="dark"] .hero-photo-light { opacity: 0; }
 html[data-theme="dark"] .hero-photo-dark { opacity: 1; }
 
+.stress-chart {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.stress-chart-dark { display: none; }
+html[data-theme="dark"] .stress-chart-light { display: none; }
+html[data-theme="dark"] .stress-chart-dark { display: block; }
+
 @media (max-width: 900px) {
   .page-shell:has(.page-photo) { grid-template-columns: 1fr; }
   .page-photo {
