@@ -383,13 +383,13 @@ main { max-width: var(--max); margin: 0 auto; }
   padding: 4.5rem var(--edge) 4rem;
 }
 .page-shell:not(:has(.page-photo)) .hero {
-  padding-bottom: 2.5rem;
+  padding-bottom: 0;
 }
 
 @media (max-width: 720px) {
   .hero { padding: 3.5rem var(--edge) 3rem; }
   .page-shell:not(:has(.page-photo)) .hero {
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
 }
 
@@ -455,7 +455,7 @@ main { max-width: var(--max); margin: 0 auto; }
 
 .section { padding: 3.2rem var(--edge); border-top: 1px solid var(--rule); }
 .page-shell:not(:has(.page-photo)) .section:first-of-type {
-  padding-top: 1.8rem;
+  padding-top: 2.8rem;
 }
 
 .section-label {

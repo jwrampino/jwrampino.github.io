@@ -7,6 +7,7 @@ navkey: cv
 <section class="hero">
   <p class="hero-eyebrow">[CV]</p>
   <h1 class="hero-name">CV</h1>
+</section>
 
 <section class="section">
   <div class="clip-grid">
