@@ -7,8 +7,6 @@ navkey: cv
 <section class="hero">
   <p class="hero-eyebrow">[CV]</p>
   <h1 class="hero-name">CV</h1>
-  <p class="hero-desc">Current resume and full academic CV, both downloadable as PDF.</p>
-</section>
 
 <section class="section">
   <div class="clip-grid">

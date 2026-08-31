@@ -382,9 +382,15 @@ main { max-width: var(--max); margin: 0 auto; }
 .hero {
   padding: 4.5rem var(--edge) 4rem;
 }
+.page-shell:not(:has(.page-photo)) .hero {
+  padding-bottom: 2.5rem;
+}
 
 @media (max-width: 720px) {
   .hero { padding: 3.5rem var(--edge) 3rem; }
+  .page-shell:not(:has(.page-photo)) .hero {
+    padding-bottom: 2rem;
+  }
 }
 
 .hero-eyebrow {
