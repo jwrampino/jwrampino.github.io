@@ -525,9 +525,9 @@ main { max-width: var(--max); margin: 0 auto; }
   content: "";
   position: absolute;
   inset: 0;
-  backdrop-filter: blur(6px) saturate(115%);
-  -webkit-backdrop-filter: blur(6px) saturate(115%);
-  background: color-mix(in srgb, var(--paper-raised) 30%, transparent);
+  background: color-mix(in srgb, var(--paper) 1%, transparent);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 }
 
 .clip-body { padding: 0.8rem 0.9rem; }
