@@ -463,6 +463,32 @@ main { max-width: var(--max); margin: 0 auto; }
   opacity: 0.5;
 }
 
+.mark-block {
+  position: relative;
+  padding: 0.9em 1.1em;
+}
+.mark-block::before {
+  content: "";
+  position: absolute;
+  left: -0.3em; right: -0.3em; bottom: -0.1em; top: -0.1em;
+  z-index: -1;
+  transform: skew(-3deg, -0.5deg);
+  border-radius: 2px;
+  background: var(--highlight);
+  opacity: 0.5;
+}
+
+.term-link {
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.term-link:hover {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink-faint);
+}
+
 .section { padding: 3.2rem var(--edge); border-top: 1px solid var(--rule); }
 .page-shell:not(:has(.page-photo)) .section:first-of-type {
   padding-top: 2.8rem;
