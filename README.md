@@ -1,6 +1,4 @@
-# jwrampino.github.io
-
-jekyll site
+# jwrampino.github.io | jwrampino.com
 
 ## structure
 
@@ -11,23 +9,6 @@ jekyll site
 - `assets/css/style.css` - both palettes as css vars. `:root` = light, `[data-theme="dark"]` = dark
 - `assets/js/theme.js` - toggle logic, localstorage persisted
 - `index.md`, `cv/index.md`, `research/index.md`, `journalism/index.md`, `contact/index.md` - page content
-
-## add a page
-
-mkdir pagename, add pagename/index.md:
-```
----
-layout: default
-title: Talks
-navkey: talks
----
-```
-add matching entry to `_data/nav.yml`.
-
-## deploy
-
-push to main. settings > pages > source: main, root.  
-live at jwrampino.github.io in a minute or two.  
 
 ## credits
 
