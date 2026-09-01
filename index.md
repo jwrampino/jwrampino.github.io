@@ -13,18 +13,13 @@ photo_dark: /assets/img/lake.JPG
       Jacob <span class="mark">Rampino</span>
     </h1>
     <p class="hero-role">MA candidate, Computational Social Science, University of Chicago</p>
-    <p class="hero-desc">
-      I study political communication, using natural language processing to
-      understand contentious discourse online. I'm interested in how framing effects and algorithmic bias narrow the range of discussion. My background is in political science, history, and journalism.
+    <p class="hero-desc">I study political communication using natural language processing, informed by my background in political science and history. Specifically, my research focuses on how information dynamics shape ideology. My developing work in data journalism is an extension of this, combining my prior experience reporting on local politics with computational methods.
     </p>
     <div class="hero-tags">
       <span class="tag">NLP</span>
       <span class="tag">political communication</span>
       <span class="tag">media studies</span>
-      <span class="tag">censorship</span>
-      <span class="tag">memetics</span>
-      <span class="tag">gatekeeping</span>
-      <span class="tag">contested concepts</span>
+      <span class="tag">journalism</span>
     </div>
   </div>
 </section>
