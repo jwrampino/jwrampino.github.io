@@ -13,7 +13,7 @@ navkey: research
 <section class="section">
   <p class="section-label">[STATEMENT]</p>
   <h2 class="section-title">Statement</h2>
-  <p class="mark-block">I study information control and dynamics, particularly how information can be used to exert power by shaping the ideology of subjects. I am concerned less with censorship in the traditional sense than with its subtler forms: filtering, whether many-to-many (algorithms) or one-to-many (mass media); memetic transmission (misinformation, flooding, indoctrination); or natural language (framing, contested concepts, political discourse). I study these dynamics empirically, applying argument mining, data mining, and transformer-based models to large-scale text corpora.</p>
+  <p class="mark-block">Forthcoming</p>
 </section>
 
 <section class="section">
