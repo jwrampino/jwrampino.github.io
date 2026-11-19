@@ -1,18 +1,4 @@
-// theme toggle, persists via localstorage, respects prefers-color-scheme on first load
-
-(function () {
-  var root = document.documentElement;
-  var btn = document.getElementById("theme-toggle");
-  if (!btn) return;
-
-  btn.addEventListener("click", function () {
-    var current = root.getAttribute("data-theme");
-    var next = current === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    localStorage.setItem("jr-theme", next);
-    if (next === "dark" && window.jrTypeLsOnActivate) window.jrTypeLsOnActivate();
-  });
-})();
+// nav + small helpers
 
 // backup active-nav check in case front matter is missing navkey
 (function () {
@@ -128,6 +114,25 @@ function jrTypeEntriesCascade(entries, branches, speed, stagger, isMobile) {
     busy = false;
   });
 
+  // clicking anywhere on the bar (except the leaf, the toggle, or the
+  // listing) toggles the nav, same as clicking the prompt
+  var header = document.querySelector(".site-header");
+  if (header) {
+    header.addEventListener("click", function (e) {
+      if (e.target.closest(".site-mark, .dir-toggle, .dir-listing")) return;
+      toggle.click();
+    });
+  }
+
+  // clicking the leaf goes home with the menu cleared. the saved state is
+  // written before navigating so the next page doesn't restore an open menu
+  var mark = document.querySelector(".site-mark");
+  if (mark) {
+    mark.addEventListener("click", function () {
+      sessionStorage.setItem(STORAGE_KEY, "0");
+    });
+  }
+
   // close if clicking outside, mobile dropdown case
   document.addEventListener("click", function (e) {
     if (!busy && !toggle.contains(e.target) && !listing.contains(e.target)) {
@@ -143,54 +148,5 @@ function jrTypeEntriesCascade(entries, branches, speed, stagger, isMobile) {
     jrTypeText(label, "ls", 110);
   }
 
-  // exposed so the theme toggle can trigger this when switching into dark mode
-  window.jrTypeLsOnActivate = function () {
-    if (label && listing.hidden) jrTypeText(label, "ls", 110);
-  };
 })();
 
-// light mode nav: compass / pin toggle, same behavior as the dark mode
-// listing, just a different visual language. needle points to current
-// page's bearing when closed, centers to neutral when open.
-(function () {
-  var toggle = document.getElementById("compass-toggle");
-  var listing = document.getElementById("compass-listing");
-  var nav = document.querySelector(".nav-compass");
-  var needle = document.getElementById("compass-needle");
-  if (!toggle || !listing || !nav || !needle) return;
-  var STORAGE_KEY = "jr-compass-open";
-  var isDesktop = window.matchMedia("(min-width: 641px)").matches;
-
-  function jiggle() {
-    needle.classList.remove("jiggle");
-    needle.getBoundingClientRect(); // force reflow so the animation can restart (offsetWidth doesn't reliably work on SVG elements)
-    needle.classList.add("jiggle");
-  }
-
-  function setOpen(open, persist) {
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "close site map" : "open site map");
-    listing.hidden = !open;
-    nav.classList.toggle("is-open", open);
-    if (persist !== false && isDesktop) {
-      sessionStorage.setItem(STORAGE_KEY, open ? "1" : "0");
-    }
-  }
-
-  toggle.addEventListener("click", function () {
-    setOpen(toggle.getAttribute("aria-expanded") !== "true");
-    jiggle();
-  });
-
-  document.addEventListener("click", function (e) {
-    if (!toggle.contains(e.target) && !listing.contains(e.target)) {
-      setOpen(false);
-    }
-  });
-
-  if (isDesktop && sessionStorage.getItem(STORAGE_KEY) === "1") {
-    setOpen(true, false);
-  }
-
-  jiggle(); // settle flourish on page load, always lands on this page's bearing
-})();

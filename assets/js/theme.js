@@ -114,6 +114,25 @@ function jrTypeEntriesCascade(entries, branches, speed, stagger, isMobile) {
     busy = false;
   });
 
+  // clicking anywhere on the bar (except the leaf, the toggle, or the
+  // listing) toggles the nav, same as clicking the prompt
+  var header = document.querySelector(".site-header");
+  if (header) {
+    header.addEventListener("click", function (e) {
+      if (e.target.closest(".site-mark, .dir-toggle, .dir-listing")) return;
+      toggle.click();
+    });
+  }
+
+  // clicking the leaf goes home with the menu cleared. the saved state is
+  // written before navigating so the next page doesn't restore an open menu
+  var mark = document.querySelector(".site-mark");
+  if (mark) {
+    mark.addEventListener("click", function () {
+      sessionStorage.setItem(STORAGE_KEY, "0");
+    });
+  }
+
   // close if clicking outside, mobile dropdown case
   document.addEventListener("click", function (e) {
     if (!busy && !toggle.contains(e.target) && !listing.contains(e.target)) {

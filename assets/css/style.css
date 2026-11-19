@@ -67,6 +67,12 @@ a { color: inherit; }
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--rule);
   overflow: visible;
+  cursor: pointer; /* whole bar toggles the nav, see theme.js */
+}
+
+/* desktop: leaf sits near the viewport edge instead of at the 6vw gutter */
+@media (min-width: 641px) {
+  .site-header { padding-right: 1.5rem; }
 }
 
 .nav { flex: 1; overflow-x: auto; }
@@ -102,6 +108,7 @@ a { color: inherit; }
 }
 
 .dir-listing[hidden] { display: none; }
+.dir-listing { cursor: default; }
 
 /* desktop: listing opens inline, to the right of the toggle */
 .dir-listing {
@@ -178,7 +185,8 @@ a { color: inherit; }
   flex-shrink: 0;
   display: flex;
   margin-left: auto;
-  margin-right: -2px; /* leaf path has ~2px of empty viewBox on its right */
+  padding: 14px; /* widens the hitbox */
+  margin-right: -16px; /* cancels the padding, plus ~2px of empty viewBox on the leaf's right */
   color: var(--ink);
   opacity: 0.85;
   transition: color 0.15s, opacity 0.15s;

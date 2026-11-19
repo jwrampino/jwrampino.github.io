@@ -20,9 +20,9 @@ navkey: contact
       <span class="contact-label">work email</span>
       <span class="contact-value">jwrampino@uchicago.edu</span>
     </a>
-    <a class="contact-row" href="https://www.linkedin.com/in/jacobrampino" target="_blank" rel="noopener">
+    <a class="contact-row" href="https://www.linkedin.com/in/jwrampino" target="_blank" rel="noopener">
       <span class="contact-label">linkedin</span>
-      <span class="contact-value">linkedin.com/in/jacobrampino</span>
+      <span class="contact-value">linkedin.com/in/jwrampino</span>
     </a>
     <a class="contact-row" href="https://github.com/jwrampino" target="_blank" rel="noopener">
       <span class="contact-label">github</span>
@@ -31,10 +31,6 @@ navkey: contact
     <a class="contact-row" href="https://scholar.google.com/citations?user=d9N4iBwAAAAJ&hl=en" target="_blank" rel="noopener">
       <span class="contact-label">google scholar</span>
       <span class="contact-value">scholar.google.com/citations</span>
-    </a>
-    <a class="contact-row" href="https://huggingface.co/jwrampino" target="_blank" rel="noopener">
-      <span class="contact-label">hugging face</span>
-      <span class="contact-value">huggingface.co/jwrampino</span>
     </a>
   </div>
 </section>
