@@ -2,8 +2,7 @@
 layout: default
 title: Home
 navkey: home
-photo_light: /assets/img/valley_portrait.JPG
-photo_dark: /assets/img/lake.JPG
+photo: /assets/img/lake.JPG
 ---
 
 <section class="hero">
